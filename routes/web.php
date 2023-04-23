@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\superpowersController;
+use App\Http\Controllers\parentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route:: resource('superpowers', superpowersController::class)-> middleware('auth');
-
-
+Route:: resource('parents', parentsController::class)-> middleware('auth');
+//require _DIR_.'/auth.php';
