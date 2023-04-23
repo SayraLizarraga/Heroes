@@ -102,7 +102,7 @@ class parentsController extends Controller
             'name'=> $request->name,
             'gender'=>$request->gender
         ]);
-        return redirect()->route('parentes.show', $parents->id);
+        return redirect()->route('parents.show', $parents->id);
     }
 
     /**
