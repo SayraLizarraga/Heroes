@@ -7,8 +7,8 @@
     <title>Edit Parents</title>
 </head>
 <body>
-<h1>Edit superpower</h1>
-    <form action="{{ route('parents.store') }}" method="post">
+<h1>Edit Parent</h1>
+    <form action="{{ route('parents.update', $parents->id) }}" method="post">
     @method('put') 
     @csrf
 
@@ -16,12 +16,11 @@
         <input type="text" name="name" value= "{{$parents->name}}">
 
         <br><br>
-        <select name= "gender" id= "" value= "{{$parents->name}}">
+        <select name= "gender" id= ""value= "{{$parents->name}}">
             <option value="Famale" selected>Famale</option>
             <option value="Male">Male</option>
             <option value="N/a">Not applicable</option>
         </select>
-
 
         <button type= "submit">Edit Parent</button>
 </body>

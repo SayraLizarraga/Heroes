@@ -31,4 +31,4 @@ Route::middleware('auth')->group(function () {
 
 Route:: resource('superpowers', superpowersController::class)-> middleware('auth');
 Route:: resource('parents', parentsController::class)-> middleware('auth');
-//require _DIR_.'/auth.php';
+require __DIR__.'/auth.php';

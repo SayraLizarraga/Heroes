@@ -63,7 +63,6 @@ class parentsController extends Controller
         -> where ('id', $id)
         -> select('id', 'name', 'gender')
         -> firstOrFail();
-        //dd($superpowers);
         return view('parents.show', compact('parents'));
     }
 
