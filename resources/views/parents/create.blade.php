@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create superpower</title>
-</head>
-<body>
-    <h1>Create superpower</h1>
+@extends('layouts.master1')
+@section('content')
     <form action="{{ route('parents.store') }}" method="post">
         @csrf
 
         <laravel for= "name">Name</larevel>
-        <input type="text" name="name">
+        <input type="text" class="form-control" name="name">
 
         <br><br>
-        <select name= "gender" id= "">
+        <select class="form-select" aria-label="Default select example" name= "gender" id= "">
             <option value="Famale" selected>Famale</option>
             <option value="Male">Male</option>
             <option value="N/a">Not applicable</option>
         </select>
-
-        <button type= "submit">Create Parent</button>
-</body>
-</html>
+        <br><br>
+        <div class="row mb-4">
+    <div class="col text-end">
+    <button  class="btn btn-danger" type= "submit">Create Parent</button>
+</div>
+</div>
+@section('botones_1')
+<div class="row mb-4">
+    <div class="col text-end">
+<a type="button" class="btn btn-danger" href="{{route ('superpowers.index')}}">Volver</a>
+</div>
+</div>
+@endsection
+       
+        @endsection

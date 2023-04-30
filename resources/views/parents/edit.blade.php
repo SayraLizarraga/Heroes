@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Parents</title>
-</head>
-<body>
-<h1>Edit Parent</h1>
+@extends('layouts.master1')
+@section('content')
     <form action="{{ route('parents.update', $parents->id) }}" method="post">
     @method('put') 
     @csrf
 
         <laravel for= "name">Name</larevel>
-        <input type="text" name="name" value= "{{$parents->name}}">
+        <input type="text" class="form-control"  name="name" value= "{{$parents->name}}">
 
         <br><br>
-        <select name= "gender" id= ""value= "{{$parents->name}}">
+        <select class="form-select" aria-label="Default select example" name= "gender" id= ""value= "{{$parents->name}}">
             <option value="Famale" selected>Famale</option>
             <option value="Male">Male</option>
             <option value="N/a">Not applicable</option>
         </select>
-
-        <button type= "submit">Edit Parent</button>
-</body>
-</html>
+        <br><br>
+        <div class="row mb-4">
+    <div class="col text-end">
+    <button  class="btn btn-danger" type= "submit">Edit Parent</button>
+</div>
+</div>
+        
+        @endsection

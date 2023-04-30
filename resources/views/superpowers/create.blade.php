@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create superpower</title>
-</head>
-<body>
-    <h1>Create superpower</h1>
-    <form action="{{ route('superpowers.store') }}" method="post">
+@extends('layouts.master')
+@section('content')
+    
+<form action="{{ route('superpowers.store') }}" method="post">
         @csrf
 
         <laravel for= "name">Name</larevel>
-        <input type="text" name="name">
+        <input type="text"  class="form-control" name="name">
 
         <br><br>
-        <laravel for= "description">Description</larevel>
-        <textarea name="description" cols= "50" rows= "5"></textarea>
+        <laravel for= "description" class="form-label">Description</larevel>
+        <textarea class="form-control" name="description" cols= "50" rows= "5"></textarea>
         
         <br><br>
-
-        <button type= "submit">Create Superpower</button>
-</body>
-</html>
+        
+        <div class="row mb-4">
+    <div class="col text-end">
+    <button  class="btn btn-danger" type= "submit">Create Superpower</button>
+</div>
+</div>
+        
+@endsection
+@section('botones_1')
+<div class="row mb-4">
+    <div class="col text-end">
+<a type="button" class="btn btn-danger" href="{{route ('superpowers.index')}}">Volver</a>
+</div>
+</div>
+@endsection

@@ -19,9 +19,10 @@ class superpowersController extends Controller
         -> where ('active', 1)
         -> select('id', 'name', 'description')
         -> get();
+        
+        $page_title="SuperPower";
 
-        //dd($superpowers);
-        return view('superpowers.index', compact('superpowers'));
+        return view('superpowers.index', compact('superpowers', 'page_title'));
     }
 
     /**
@@ -31,7 +32,10 @@ class superpowersController extends Controller
      */
     public function create()
     {
-        return view('superpowers.create');
+        
+        $page_title="Create Superpower";
+
+        return view('superpowers.create', compact('page_title'));
     }
 
     /**
@@ -63,8 +67,11 @@ class superpowersController extends Controller
         -> where ('id', $id)
         -> select('id', 'name', 'description')
         -> firstOrFail();
-        //dd($superpowers);
-        return view('superpowers.show', compact('superpowers'));
+        
+        $page_title=" Show SuperPower";
+
+        return view('superpowers.show', compact('superpowers', 'page_title'));
+        
     }
 
     /**
@@ -80,7 +87,9 @@ class superpowersController extends Controller
         -> where ('id', $id)
         -> select('id', 'name', 'description')
         -> firstOrFail();
-        return view('superpowers.edit', compact('superpowers'));
+        $page_title=" Edit SuperPower";
+
+        return view('superpowers.edit', compact('superpowers', 'page_title'));
     }
 
     /**
